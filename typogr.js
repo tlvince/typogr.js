@@ -98,7 +98,7 @@
 
   /**
    * Replaces the space between the last two words in a string with ``&nbsp;``
-   * Works in these block tags ``(h1-h6, p, li, dd, dt)`` and also accounts for
+   * Works in these block tags ``(p, li, dd, dt)`` and also accounts for
    * potential closing inline elements ``a, em, strong, span, b, i``
    *
    */
@@ -113,7 +113,7 @@
             '\\s*'+                               // optional white space!
             '(</(a|em|span|strong|i|b)>\\s*)*'+   // optional closing inline tags with
                                                   // optional white space after each
-            '((</(p|h[1-6]|li|dt|dd)>)|$))'       // end with a closing p, h1-6, li or
+            '((</(p|li|dt|dd)>)|$))'              // end with a closing p, li or
                                                   // the end of the string
             , 'gi');
     return text.replace(re_widont, '$1&nbsp;$2');
